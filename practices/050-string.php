@@ -5,7 +5,7 @@ header('Content-Type: text/plain');
 
 $name = 'Shin\'
 
-der';
+der';  # 單引號或雙引號包裹的字元內容，中間都可以換行
 
 echo "泥好\n, $name
 
