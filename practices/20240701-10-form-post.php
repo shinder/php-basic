@@ -9,7 +9,7 @@
 
 <body>
   <pre><?php print_r($_POST) ?></pre>
-  <form name="form1" method="post" enctype="multipart/form-data">
+  <form name="form1" method="post">
     <input type="text" name="account" placeholder="帳號">
     <br>
     <input type="password" name="password" placeholder="密碼">
