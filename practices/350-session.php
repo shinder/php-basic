@@ -2,7 +2,7 @@
 session_start(); # 基本上是操作 cookie, 要放在最前面
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
   <meta charset="UTF-8">

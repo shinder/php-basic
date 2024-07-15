@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>310-fetch-get</title>
   </head>
   <body>
     <input type="number" id="aa" /> + <input type="number" id="bb" />
@@ -18,11 +18,15 @@
         const b = b_field.value;
         console.log(`?a=${a}&b=${b}`);
 
-        fetch(`20240702-01-plus-api_.php?a=${a}&b=${b}`)
-          .then((r) => r.text())
-          .then((txt) => {
-            if (txt) {
-              document.querySelector("#result").innerHTML = txt;
+        fetch(`260-plus-api-get.php?a=${a}&b=${b}`)
+          .then((response) => {
+            if (response.ok) {
+              return response.json(); // 把結果當作 JSON 字串, 做 JSON.parse() 解析
+            }
+          })
+          .then((data) => {
+            if (data && data.result) {
+              document.querySelector("#result").innerHTML = data.result;
             }
           })
           .catch((ex) => {

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>330-fetch-form</title>
+  </head>
+  <body>
+    <form name="form1" onsubmit="sendData(event)">
+      <input type="text" name="account" placeholder="帳號">
+      <br>
+      <input type="password" name="password" placeholder="密碼">
+      <br>
+      <input type="submit" value="送出">
+    </form>
+    <div id="result"></div>
+
+    <script src="./../resources/jquery-3.7.1.min.js"></script>
+    <script>
+      const sendData = (e) => {
+        e.preventDefault();  // 不要讓表單以傳統的方式送出
+        const fd = new FormData(document.form1);  // 建立沒有外觀只包含資料的表單物件
+
+        fetch(`240-post-data.php`, {
+          method: 'POST',
+          body: fd
+        })
+          .then((r) => r.json()) // 把結果當作 JSON 字串, 做 JSON.parse() 解析
+          .then((data) => {
+            $("#result").html(JSON.stringify(data));
+          })
+          .catch((ex) => {
+            console.log("發生錯誤了:", ex);
+          });
+      };
+    </script>
+  </body>
+</html>

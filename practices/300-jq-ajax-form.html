@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>300-jq-ajax-form</title>
+  </head>
+  <body>
+    <form name="form1" onsubmit="sendData(event)">
+      <input type="text" name="account" placeholder="帳號">
+      <br>
+      <input type="password" name="password" placeholder="密碼">
+      <br>
+      <input type="submit" value="送出">
+    </form>
+    <div id="result"></div>
+
+    <script src="./../resources/jquery-3.7.1.min.js"></script>
+    <script>
+      const sendData = (e) => {
+        e.preventDefault();  // 不要讓表單以傳統的方式送出
+        const urlencoded = $(document.form1).serialize();
+        $.post('./240-post-data.php', urlencoded, function (data) {
+          $("#result").html(JSON.stringify(data));
+        }, 'json');
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>290-jq-ajax-post</title>
+  </head>
+  <body>
+    <input type="number" id="aa" /> + <input type="number" id="bb" />
+    <button onclick="sendData()">=</button>
+    <span id="result"></span>
+
+    <script src="./../resources/jquery-3.7.1.min.js"></script>
+    <script>
+      const a_field = $("#aa");
+      const b_field = $("#bb");
+      const sendData = () => {
+        const a = a_field.val();
+        const b = b_field.val();
+        $.post('./270-plus-api-post.php', {a, b}, function (data) {
+          if (data && data.result) {
+            $("#result").html(data.result);
+          }
+        }, 'json');
+      };
+    </script>
+  </body>
+</html>

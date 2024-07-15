@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>240-form-post</title>
+  <title>Document</title>
 </head>
 
 <body>
   <!--
-    預設值 enctype="application/x-www-form-urlencoded"
-    若要上傳檔案使用 enctype="multipart/form-data"
+  <pre> 標籤中間的「空白」字元會被忠實呈現
   -->
-  <form name="form1" method="post" action="./230-post-data.php" enctype="application/x-www-form-urlencoded">
+  <pre><?php print_r($_POST) ?></pre>
+  <form name="form1" method="post">
     <input type="text" name="account" placeholder="帳號">
     <br>
     <input type="password" name="password" placeholder="密碼">

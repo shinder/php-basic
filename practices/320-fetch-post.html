@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>320-fetch-post</title>
   </head>
   <body>
     <input type="number" id="aa" /> + <input type="number" id="bb" />
@@ -16,18 +16,22 @@
       const sendData = () => {
         const a = a_field.value;
         const b = b_field.value;
-        console.log(`?a=${a}&b=${b}`);
 
-        fetch(`20240702-01-plus-api.php?a=${a}&b=${b}`)
-          .then((response) => {
-            if (response.ok) {
-              return response.text(); // 把結果當作字串解析
+        fetch(`270-plus-api-post.php`, {
+          method: 'POST',
+          body: new URLSearchParams({a, b}),
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        })
+          .then((r) => r.json()) // 把結果當作 JSON 字串, 做 JSON.parse() 解析
+          .then((data) => {
+            if (data && data.result) {
+              document.querySelector("#result").innerHTML = data.result;
             }
           })
-          .then((txt) => {
-            if (txt) {
-              document.querySelector("#result").innerHTML = txt;
-            }
+          .catch((ex) => {
+            console.log("發生錯誤了:", ex);
           });
       };
     </script>
