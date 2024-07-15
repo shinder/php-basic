@@ -2,7 +2,7 @@
 
 header('Content-Type: text/plain');
 
-$ar = []; # 不需要的, 但有宣告的用意
+$ar = [];  # 不需要的, 但有宣告的用意
 for ($i = 1; $i <= 42; $i++) {
   $ar[] = $i; # array_push()
 }

@@ -2,9 +2,11 @@
 
 header('Content-Type: text/plain');
 
+# 索引式陣列
 $ar1 = array(2, 4, 6);
 $ar2 = [2, 4, 6];
 
+# 關聯式陣列
 $ar3 = array(
   'name' => 'David',
   'age' => 25,
@@ -18,9 +20,7 @@ $ar4 = [
 ];
 
 // echo $ar4 . "\n\n"; # 不要直接轉字串
-
 var_dump($ar4);
-
 print_r($ar4);
 
 echo count($ar4);

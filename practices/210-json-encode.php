@@ -1,7 +1,4 @@
 <?php
-
-sleep(10); // 模擬網速很慢的情況
-
 header('Content-Type: application/json');
 
 $ar1 = [
@@ -10,4 +7,6 @@ $ar1 = [
   'Hello~',
 ];
 
+# json_encode() 將 PHP 陣列轉換為 JSON 字串（JSON 的陣列格式或物件）
+# JSON_UNESCAPED_UNICODE 為內建常數，不做 unicode 跳脫
 echo json_encode($ar1, JSON_UNESCAPED_UNICODE);
