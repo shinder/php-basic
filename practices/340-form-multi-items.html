@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="./../resources/bootstrap-5.3.3-dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <form method="post" action="./240-post-data.php">
+            <div class="mb-3">
+              <button type="button" class="btn btn-warning" onclick="addItem()">
+                +
+              </button>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="mb-3">
+                  <label class="form-label">連絡人資料 </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="names[]"
+                    placeholder="姓名"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="mobiles[]"
+                    placeholder="手機"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="c-container"></div>
+
+            <button type="submit" class="btn btn-primary">送出</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./../resources/jquery-3.7.1.min.js"></script>
+
+    <script>
+      const c_container = $(".c-container");
+      const itemFpl = () => {
+        return `<div class="card">
+              <div class="card-body">
+                <div class="mb-3">
+                  <label class="form-label"
+                    >連絡人資料
+                    <button type="button" class="btn btn-danger" onclick="removeItem(event)">-</button>
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="names[]"
+                    placeholder="姓名"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="mobiles[]"
+                    placeholder="手機"
+                  />
+                </div>
+              </div>
+            </div>`;
+      };
+
+      function addItem() {
+        // 加入一組 card 的 HTML 片段
+        c_container.append(itemFpl());
+      }
+
+      function removeItem(event) {
+        // 找到移除按鈕的參照
+        const $el = $(event.target);
+        // 往上找到最接近並符合條件的元素
+        $el.closest(".card").remove();
+      }
+    </script>
+  </body>
+</html>
