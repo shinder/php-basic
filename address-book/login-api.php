@@ -6,13 +6,12 @@ header('Content-Type: application/json');
 $output = [
   'success' => false,
   'bodyData' => $_POST, # 除錯用
-  'code' => 0,  # 除錯用
+  'code' => 401,  # 除錯用
   'error' => '',
 ];
 
 if (!isset($_POST['email']) or !isset($_POST['password'])) {
   $output['error'] = '欄位資料不足';
-  $output['code'] = 401;
   echo json_encode($output);
   exit;
 }

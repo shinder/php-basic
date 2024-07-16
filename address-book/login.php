@@ -1,9 +1,7 @@
 <?php
 $title = "登入";
 $pageName = "login";
-
 require __DIR__ . '/parts/init.php';
-
 ?>
 <?php include __DIR__ . "/parts/html-head.php"; ?>
 <style>
@@ -64,7 +62,7 @@ require __DIR__ . '/parts/init.php';
 <script>
 
   const emailField = document.form1.email;
-  const modal = new bootstrap.Modal('#exampleModal');
+  const modal = new bootstrap.Modal('#exampleModal');  // Modal 物件 (光箱效果面板)
 
   function validateEmail(email) {
     const re =
@@ -89,6 +87,20 @@ require __DIR__ . '/parts/init.php';
     }
 
     if (isPass) {
+      // 將表單資料轉換為 urlencoded 格式
+      const urlencoded = $(document.form1).serialize();
+      // 使用 POST 發送 AJAX
+      $.post('login-api.php', urlencoded, function(data){
+        console.log(data);
+        if (data.success) {
+          location.href ="index_.php";
+        } else {
+          modal.show();
+        }
+      }, 'json');
+    }
+    /*
+    if (isPass) {
       // FormData 的個體看成沒有外觀的表單
       const fd = new FormData(document.form1);
 
@@ -103,10 +115,10 @@ require __DIR__ . '/parts/init.php';
           } else {
             modal.show();
           }
-          
         })
         .catch(ex => console.log(ex))
     }
+    */
   };
 </script>
 <?php include __DIR__ . "/parts/html-tail.php"; ?>

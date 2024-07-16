@@ -1,4 +1,5 @@
 <?php
+# 若沒有登入 admin 則跳到登入頁
 
 if (!isset($_SESSION)) {
   // 如果尚未啟動 session 的功能, 就啟動

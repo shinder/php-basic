@@ -13,6 +13,7 @@ require __DIR__ . '/parts/init.php';
 $t_sql = "SELECT COUNT(1) FROM address_book ";
 # 取得總筆數
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
+# 設定預設值
 $totalPages = 0;
 $rows = [];
 if ($totalRows) {
@@ -29,7 +30,7 @@ if ($totalRows) {
     ($page - 1) * $perPage,
     $perPage
   );
-
+  # 取得該頁資料
   $rows = $pdo->query($sql)->fetchAll();
 }
 

@@ -14,6 +14,7 @@ require __DIR__ . '/parts/init.php';
 $t_sql = "SELECT COUNT(1) FROM address_book ";
 # 取得總筆數
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
+# 設定預設值
 $totalPages = 0;
 $rows = [];
 if ($totalRows) {
@@ -30,7 +31,7 @@ if ($totalRows) {
     ($page - 1) * $perPage,
     $perPage
   );
-
+  # 取得該頁資料
   $rows = $pdo->query($sql)->fetchAll();
 }
 
@@ -76,7 +77,7 @@ if ($totalRows) {
               <td>
                 <!--
                 <a href="del.php?ab_id=<?= $r['ab_id'] ?>" onclick="return confirm(`是否要刪除編號為 <?= $r['ab_id'] ?> 的資料?`)">
-          -->
+                -->
                 <a href="javascript: deleteOne(<?= $r['ab_id'] ?>)">
                   <i class="fa-solid fa-trash"></i>
                 </a>
@@ -102,6 +103,7 @@ if ($totalRows) {
 
 <?php include __DIR__ . "/parts/html-scripts.php"; ?>
 <script>
+  // 下式，從 PHP 直接輸出資料給 JavaScript
   const data = <?= json_encode($rows)  ?>;
   const deleteOne = (ab_id) => {
     if (confirm(`是否要刪除編號為 ${ab_id} 的資料??`)) {
