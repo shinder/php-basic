@@ -10,14 +10,3 @@ http 通訊協定
         #hash 頁面內的連結
 
 =======================================
-購物車 以 CRUD 的角度開始思考
-
-購物車 
-  create: 新增購物車項目
-    cart_id, member_id, product_id, quantity, created_at
-
-  read: 購物車的內容
-
-  update: 變更的項目的數量
-  
-  delete: 移除購物車裡的項目, 清空
