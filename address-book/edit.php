@@ -154,4 +154,4 @@ if (empty($r)) {
     }
   };
 </script>
-<?php include __DIR__ . "/parts/html-foot.php"; ?>
+<?php include __DIR__ . "/parts/html-tail.php"; ?>

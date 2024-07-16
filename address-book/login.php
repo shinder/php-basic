@@ -109,4 +109,4 @@ require __DIR__ . '/db-connect.php';
     }
   };
 </script>
-<?php include __DIR__ . "/parts/html-foot.php"; ?>
+<?php include __DIR__ . "/parts/html-tail.php"; ?>

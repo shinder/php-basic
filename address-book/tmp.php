@@ -14,4 +14,4 @@ require __DIR__ . '/db-connect.php';
 </div>
 
 <?php include __DIR__ . "/parts/scripts.php"; ?>
-<?php include __DIR__ . "/parts/html-foot.php"; ?>
+<?php include __DIR__ . "/parts/html-tail.php"; ?>
