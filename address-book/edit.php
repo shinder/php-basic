@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/parts/admin-required.php';
-require __DIR__ . '/db-connect.php';
+require __DIR__ . '/parts/init.php';
 
 $ab_id = isset($_GET['ab_id']) ? intval($_GET['ab_id']) : 0;
 if (empty($ab_id)) {
@@ -23,7 +23,7 @@ if (empty($r)) {
     color: red;
   }
 </style>
-<?php include __DIR__ . "/parts/navbar.php"; ?>
+<?php include __DIR__ . "/parts/html-navbar.php"; ?>
 <div class="container">
   <div class="row">
     <div class="col-6">
@@ -92,7 +92,7 @@ if (empty($r)) {
   </div>
 </div>
 
-<?php include __DIR__ . "/parts/scripts.php"; ?>
+<?php include __DIR__ . "/parts/html-scripts.php"; ?>
 <script>
   const nameField = document.form1.name;
   const emailField = document.form1.email;

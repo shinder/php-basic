@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/db-connect.php';
+require __DIR__ . '/parts/init.php';
 
 $sql = "SELECT * FROM address_book ORDER BY ab_id DESC LIMIT 5 ";
 $stmt = $pdo->query($sql);

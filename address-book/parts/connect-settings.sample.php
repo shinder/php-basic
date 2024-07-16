@@ -1,6 +1,6 @@
 <?php
-$db_host = '127.0.0.1';
-$db_user = 'root';
-$db_pass = 'root';
-$db_name = 'shin01';
-$db_port = 3306;
+const DB_HOST = '127.0.0.1';
+const DB_USER = 'root';
+const DB_PASS = 'root';
+const DB_NAME = 'shin01';
+CONST DB_PORT = 3306;

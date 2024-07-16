@@ -2,7 +2,7 @@
 $title = "登入";
 $pageName = "login";
 
-require __DIR__ . '/db-connect.php';
+require __DIR__ . '/parts/init.php';
 
 ?>
 <?php include __DIR__ . "/parts/html-head.php"; ?>
@@ -11,7 +11,7 @@ require __DIR__ . '/db-connect.php';
     color: red;
   }
 </style>
-<?php include __DIR__ . "/parts/navbar.php"; ?>
+<?php include __DIR__ . "/parts/html-navbar.php"; ?>
 <div class="container">
   <div class="row">
     <div class="col-6">
@@ -60,7 +60,7 @@ require __DIR__ . '/db-connect.php';
   </div>
 </div>
 
-<?php include __DIR__ . "/parts/scripts.php"; ?>
+<?php include __DIR__ . "/parts/html-scripts.php"; ?>
 <script>
 
   const emailField = document.form1.email;

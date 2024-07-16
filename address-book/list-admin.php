@@ -10,7 +10,7 @@ if ($page < 1) {
   exit; # 結束程式, die()
 }
 
-require __DIR__ . '/db-connect.php';
+require __DIR__ . '/parts/init.php';
 $t_sql = "SELECT COUNT(1) FROM address_book ";
 # 取得總筆數
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
@@ -36,7 +36,7 @@ if ($totalRows) {
 
 ?>
 <?php include __DIR__ . "/parts/html-head.php"; ?>
-<?php include __DIR__ . "/parts/navbar.php"; ?>
+<?php include __DIR__ . "/parts/html-navbar.php"; ?>
 <div class="container">
   <div class="row">
     <div class="col">
@@ -100,7 +100,7 @@ if ($totalRows) {
   </div>
 </div>
 
-<?php include __DIR__ . "/parts/scripts.php"; ?>
+<?php include __DIR__ . "/parts/html-scripts.php"; ?>
 <script>
   const data = <?= json_encode($rows)  ?>;
   const deleteOne = (ab_id) => {

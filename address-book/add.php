@@ -4,7 +4,7 @@ require __DIR__ . '/parts/admin-required.php';
 $title = "新增通訊錄";
 $pageName = "ab_add";
 
-require __DIR__ . '/db-connect.php';
+require __DIR__ . '/parts/init.php';
 
 ?>
 <?php include __DIR__ . "/parts/html-head.php"; ?>
@@ -13,7 +13,7 @@ require __DIR__ . '/db-connect.php';
     color: red;
   }
 </style>
-<?php include __DIR__ . "/parts/navbar.php"; ?>
+<?php include __DIR__ . "/parts/html-navbar.php"; ?>
 <div class="container">
   <div class="row">
     <div class="col-6">
@@ -76,7 +76,7 @@ require __DIR__ . '/db-connect.php';
   </div>
 </div>
 
-<?php include __DIR__ . "/parts/scripts.php"; ?>
+<?php include __DIR__ . "/parts/html-scripts.php"; ?>
 <script>
   const nameField = document.form1.name;
   const emailField = document.form1.email;

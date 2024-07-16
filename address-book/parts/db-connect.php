@@ -1,22 +1,15 @@
 <?php
 
-# include __DIR__ . '/connect-settings.php';
-
 require __DIR__ . '/connect-settings.php';
 
-$dsn = "mysql:host={$db_host};dbname={$db_name};charset=utf8mb4";
+$dsn = sprintf('mysql:host=%s;dbname=%s;charset=utf8mb4', DB_HOST, DB_NAME);
 
 $pdo_options = [
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
   PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ];
 
-$pdo = new PDO($dsn, $db_user, $db_pass, $pdo_options);
-
-if (!isset($_SESSION)) {
-  // 如果尚未啟動 session 的功能, 就啟動
-  session_start();
-}
+$pdo = new PDO($dsn, DB_USER, DB_PASS, $pdo_options);
 
 
 

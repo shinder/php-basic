@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/parts/admin-required.php';
 
-require __DIR__ . '/db-connect.php';
+require __DIR__ . '/parts/init.php';
 header('Content-Type: application/json');
 
 $output = [
