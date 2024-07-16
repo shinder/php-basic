@@ -1,11 +1,8 @@
 <?php
 require __DIR__ . '/parts/admin-required.php';
-
+require __DIR__ . '/parts/init.php';
 $title = "新增通訊錄";
 $pageName = "ab_add";
-
-require __DIR__ . '/parts/init.php';
-
 ?>
 <?php include __DIR__ . "/parts/html-head.php"; ?>
 <style>
@@ -112,6 +109,29 @@ require __DIR__ . '/parts/init.php';
     }
 
     if (isPass) {
+      // 將表單資料轉換為 urlencoded 格式
+      const fd = $(document.form1).serialize();
+
+      $.post('add-api.php', fd, function(data){
+        console.log(data);
+        if (data.success) {
+          modalBody.innerHTML = `
+            <div class="alert alert-success" role="alert">
+              新增成功
+            </div>`;
+          // alert('新增成功')
+        } else {
+          modalBody.innerHTML = `
+            <div class="alert alert-danger" role="alert">
+              沒有新增
+            </div>`;
+          // alert('沒有新增')
+        }
+        modal.show();
+      }, 'json')
+    }
+    /*
+    if (isPass) {
       // FormData 的個體看成沒有外觀的表單
       const fd = new FormData(document.form1);
 
@@ -138,6 +158,7 @@ require __DIR__ . '/parts/init.php';
         })
         .catch(ex => console.log(ex))
     }
+    */
   };
 </script>
 <?php include __DIR__ . "/parts/html-tail.php"; ?>

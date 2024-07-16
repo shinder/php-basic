@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . '/parts/admin-required.php';
-
 require __DIR__ . '/parts/init.php';
 header('Content-Type: application/json');
 
@@ -8,7 +7,6 @@ $output = [
   'success' => false,
   'bodyData' => $_POST, # 除錯用
 ];
-
 
 // TODO: 表單欄位的資料檢查
 
@@ -22,7 +20,6 @@ if ($ts === false) {
 } else {
   $birthday = date('Y-m-d', $ts);
 }
-
 
 /*
 // 錯誤的作法: SQL injection 的問題

@@ -9,7 +9,6 @@ $output = [
   'code' => 0, # 除錯用
 ];
 
-
 // TODO: 表單欄位的資料檢查
 $ab_id = isset($_POST['ab_id']) ? intval($_POST['ab_id']) : 0;
 if (empty($ab_id)) {
@@ -32,8 +31,6 @@ if ($ts === false) {
 } else {
   $birthday = date('Y-m-d', $ts);
 }
-
-
 
 $sql = "UPDATE `address_book` SET 
     `name`=?,

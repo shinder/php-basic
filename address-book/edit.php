@@ -3,15 +3,17 @@ require __DIR__ . '/parts/admin-required.php';
 require __DIR__ . '/parts/init.php';
 
 $ab_id = isset($_GET['ab_id']) ? intval($_GET['ab_id']) : 0;
+# 如果沒有資料編號
 if (empty($ab_id)) {
-  header('Location: index_.php'); exit;
+  header('Location: index_.php');
+  exit;
 }
 $sql = "SELECT * FROM address_book WHERE ab_id=$ab_id";
-
-
 $r = $pdo->query($sql)->fetch();
+# 如果沒有該筆資料
 if (empty($r)) {
-  header('Location: index_.php'); exit;
+  header('Location: index_.php');
+  exit;
 }
 
 # header('Content-Type: application/json'); # 告訴瀏覽器內容為 JSON
@@ -35,33 +37,32 @@ if (empty($r)) {
           <form name="form1" onsubmit="sendData(event)" novalidate>
             <input type="hidden" name="ab_id" value="<?= $r['ab_id'] ?>">
             <div class="mb-3">
+              <label for="name" class="form-label">編號</label>
+              <input type="text" class="form-control" value="<?= $r['ab_id'] ?>" disabled>
+            </div>
+            <div class="mb-3">
               <label for="name" class="form-label">姓名</label>
-              <input type="text" class="form-control" name="name" 
-              value="<?= htmlentities($r['name']) ?>" id="name" required>
+              <input type="text" class="form-control" name="name" value="<?= htmlentities($r['name']) ?>" id="name" required>
               <div class="form-text"></div>
             </div>
 
             <div class="mb-3">
               <label for="email" class="form-label">email</label>
-              <input type="email" class="form-control" name="email"
-              value="<?= $r['email'] ?>" id="email">
+              <input type="email" class="form-control" name="email" value="<?= $r['email'] ?>" id="email">
               <div class="form-text"></div>
             </div>
             <div class="mb-3">
               <label for="mobile" class="form-label">手機</label>
-              <input type="text" class="form-control" name="mobile"
-              value="<?= $r['mobile'] ?>" id="mobile">
+              <input type="text" class="form-control" name="mobile" value="<?= $r['mobile'] ?>" id="mobile">
               <div class="form-text"></div>
             </div>
             <div class="mb-3">
               <label for="birthday" class="form-label">生日</label>
-              <input type="date" class="form-control" name="birthday"
-              value="<?= $r['birthday'] ?>" id="birthday">
+              <input type="date" class="form-control" name="birthday" value="<?= $r['birthday'] ?>" id="birthday">
             </div>
             <div class="mb-3">
               <label for="address" class="form-label">地址</label>
-              <textarea class="form-control" name="address" id="address" 
-              rows="3"><?= htmlentities($r['address']) ?></textarea>
+              <textarea class="form-control" name="address" id="address" rows="3"><?= htmlentities($r['address']) ?></textarea>
             </div>
             <button type="submit" class="btn btn-primary">修改</button>
           </form>
@@ -86,7 +87,7 @@ if (empty($r)) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-        <a href="index_.php" class="btn btn-primary">到列表頁</a>
+        <a href="javascript: history.back()" class="btn btn-primary">到列表頁</a>
       </div>
     </div>
   </div>
@@ -126,11 +127,32 @@ if (empty($r)) {
       emailField.nextElementSibling.innerHTML = '請填寫正確的 Email';
       emailField.style.border = '1px solid red';
     }
+    if (isPass) {
+      // 將表單資料轉換為 urlencoded 格式
+      const fd = $(document.form1).serialize();
 
+      $.post('edit-api.php', fd, function(data) {
+        console.log(data);
+        if (data.success) {
+          modalBody.innerHTML = `
+            <div class="alert alert-success" role="alert">
+              編輯成功
+            </div>`;
+          // alert('新增成功')
+        } else {
+          modalBody.innerHTML = `
+            <div class="alert alert-danger" role="alert">
+              資料沒有修改
+            </div>`;
+          // alert('沒有新增')
+        }
+        modal.show();
+      }, 'json')
+    }
+    /*
     if (isPass) {
       // FormData 的個體看成沒有外觀的表單
       const fd = new FormData(document.form1);
-
       fetch('edit-api.php', {
           method: 'POST',
           body: fd, // enctype: multipart/form-data
@@ -152,6 +174,7 @@ if (empty($r)) {
         })
         .catch(ex => console.log(ex))
     }
+    */
   };
 </script>
 <?php include __DIR__ . "/parts/html-tail.php"; ?>
