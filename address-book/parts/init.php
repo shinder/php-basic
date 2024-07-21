@@ -4,6 +4,5 @@ if (!isset($_SESSION)) {
   session_start();
 }
 
-const PATH_BASE = '/php-basic';
 
 require __DIR__. '/db-connect.php';

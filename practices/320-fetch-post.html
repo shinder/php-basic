@@ -17,6 +17,7 @@
         const a = a_field.value;
         const b = b_field.value;
 
+        // fetch() 使用 POST 方法發送
         fetch(`270-plus-api-post.php`, {
           method: 'POST',
           body: new URLSearchParams({a, b}),

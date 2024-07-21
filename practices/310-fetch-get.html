@@ -18,6 +18,7 @@
         const b = b_field.value;
         console.log(`?a=${a}&b=${b}`);
 
+        // fetch() 使用 GET 方法發送
         fetch(`260-plus-api-get.php?a=${a}&b=${b}`)
           .then((response) => {
             if (response.ok) {

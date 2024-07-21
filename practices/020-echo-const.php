@@ -14,6 +14,8 @@
 
 <body>
   <?php
+  const MY_PI = 3.14;
+
   # echo 為輸出至頁面
   echo 12 + 34;
   echo '<br>';
@@ -21,6 +23,7 @@
   echo '<br>';
   echo __FILE__; # 這支 php 的完整的路徑
   echo '<br>';
+  echo MY_PI;
   ?>
 </body>
 

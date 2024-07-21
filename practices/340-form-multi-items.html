@@ -18,6 +18,7 @@
     <div class="container">
       <div class="row">
         <div class="col-6">
+          <!-- 動態增加欄位的表單 -->
           <form method="post" action="./240-post-data.php">
             <div class="mb-3">
               <button type="button" class="btn btn-warning" onclick="addItem()">
@@ -59,6 +60,7 @@
 
     <script>
       const c_container = $(".c-container");
+      // 取得 HTML 模版 (字串) 的函式
       const itemFpl = () => {
         return `<div class="card">
               <div class="card-body">
@@ -86,11 +88,12 @@
             </div>`;
       };
 
+      // 加入欄位的方式
       function addItem() {
         // 加入一組 card 的 HTML 片段
         c_container.append(itemFpl());
       }
-
+      // 移除欄位的方式
       function removeItem(event) {
         // 找到移除按鈕的參照
         const $el = $(event.target);

@@ -17,6 +17,7 @@
       const sendData = () => {
         const a = a_field.val();
         const b = b_field.val();
+        // $.get(對象URL, 傳送的資料, 回呼函式, 回傳的資料格式)
         $.get('./260-plus-api-get.php', {a, b}, function (data) {
           if (data && data.result) {
             $("#result").html(data.result);

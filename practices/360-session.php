@@ -7,7 +7,7 @@ session_start(); # 基本上是操作 cookie, 要放在最前面
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>360-session</title>
 </head>
 
 <body>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
-
+<!-- address-book/parts/html-head.php -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,5 +8,4 @@
   <link rel="stylesheet" href="<?= PATH_BASE ?>/resources/bootstrap-5.3.3-dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="<?= PATH_BASE ?>/resources/fontawesome-free-6.5.2-web/css/all.min.css" />
 </head>
-
 <body>

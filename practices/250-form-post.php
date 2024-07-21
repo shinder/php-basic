@@ -12,7 +12,8 @@
     預設值 enctype="application/x-www-form-urlencoded"
     若要上傳檔案使用 enctype="multipart/form-data"
   -->
-  <form name="form1" method="post" action="./240-post-data.php" enctype="application/x-www-form-urlencoded">
+  <form name="form1" method="post" action="./240-post-data.php"
+        enctype="application/x-www-form-urlencoded">
     <input type="text" name="account" placeholder="帳號">
     <br>
     <input type="password" name="password" placeholder="密碼">

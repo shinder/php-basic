@@ -17,6 +17,9 @@
       const sendData = () => {
         const a = a_field.val();
         const b = b_field.val();
+        // 以 POST 方法做 AJAX
+        // $.post(對象URL, 傳送的資料, 回呼函式, 回傳的資料格式)
+        // 送出的格式為 application/x-www-form-urlencoded
         $.post('./270-plus-api-post.php', {a, b}, function (data) {
           if (data && data.result) {
             $("#result").html(data.result);
