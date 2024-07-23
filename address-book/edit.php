@@ -88,7 +88,7 @@ if (empty($r)) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-        <a href="javascript: history.back()" class="btn btn-primary">到列表頁</a>
+        <a href="javascript: location.href = document.referrer ? document.referrer : './' " class="btn btn-primary">到列表頁</a>
       </div>
     </div>
   </div>
