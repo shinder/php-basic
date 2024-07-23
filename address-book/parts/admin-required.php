@@ -1,4 +1,5 @@
 <?php
+# 檔案: address-book/parts/admin-required.php
 # 若沒有登入 admin 則跳到登入頁
 
 if (!isset($_SESSION)) {

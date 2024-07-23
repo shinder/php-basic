@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/parts/admin-required.php';
+# 檔案: address-book/edit.php
 require __DIR__ . '/parts/init.php';
 
 $ab_id = isset($_GET['ab_id']) ? intval($_GET['ab_id']) : 0;

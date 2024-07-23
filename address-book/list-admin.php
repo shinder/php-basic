@@ -8,7 +8,7 @@ $pageName = "ab_list";
 $perPage = 20; # 表示一頁最多有 20 筆
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 if ($page < 1) {
-  header('Location: ./'); # 跳轉頁面
+  header('Location: ?page=1'); # 跳轉頁面
   exit; # 結束程式, die()
 }
 $where = ' WHERE 1 ';  # SQL 條件開頭
@@ -137,8 +137,6 @@ if ($totalRows) {
 
 <?php include __DIR__ . "/parts/html-scripts.php"; ?>
 <script>
-  // 下式，從 PHP 直接輸出資料給 JavaScript
-  const data = <?= json_encode($rows)  ?>;
   const deleteOne = (ab_id) => {
     if (confirm(`是否要刪除編號為 ${ab_id} 的資料??`)) {
       location.href = `del.php?ab_id=${ab_id}`;

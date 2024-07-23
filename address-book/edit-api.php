@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/parts/admin-required.php';
+# 檔案: address-book/edit-api.php
 require __DIR__ . '/parts/init.php';
 header('Content-Type: application/json');
 
@@ -9,7 +10,7 @@ $output = [
   'code' => 0, # 除錯用
 ];
 
-// TODO: 表單欄位的資料檢查
+// 表單欄位的資料檢查
 $ab_id = isset($_POST['ab_id']) ? intval($_POST['ab_id']) : 0;
 if (empty($ab_id)) {
   $output['code'] = 400;

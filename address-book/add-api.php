@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/parts/admin-required.php';
+# address-book/add-api.php
 require __DIR__ . '/parts/init.php';
 header('Content-Type: application/json');
 
@@ -8,15 +9,14 @@ $output = [
   'bodyData' => $_POST, # 除錯用
 ];
 
-// TODO: 表單欄位的資料檢查
+# 表單欄位的資料檢查
+# filter_var() 可以用來檢查 email 格式
+# filter_var('bob@example.com', FILTER_VALIDATE_EMAIL)
 
 $birthday = $_POST['birthday'];
 $ts = strtotime($birthday); # 轉換成 timestamp
 if ($ts === false) {
   $birthday = null; # 如果不是日期的格式, 就使用 null
-  # 下列兩行測試用
-  // echo json_encode($output);
-  // exit;
 } else {
   $birthday = date('Y-m-d', $ts);
 }
