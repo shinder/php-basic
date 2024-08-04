@@ -1,21 +1,21 @@
 From: <Saved by Blink>
 Snapshot-Content-Location: https://getbootstrap.com/docs/5.3/content/tables/
 Subject: =?utf-8?Q?Tables=20=C2=B7=20Bootstrap=20v5.3?=
-Date: Sat, 3 Aug 2024 22:19:37 +0800
+Date: Sun, 4 Aug 2024 09:35:10 +0800
 MIME-Version: 1.0
 Content-Type: multipart/related;
 	type="text/html";
-	boundary="----MultipartBoundary--184PzcNtKvkawnRUX64kMqlr4imkCZ8RI98gEp0ZNZ----"
+	boundary="----MultipartBoundary--gScVFlUsBUuOdrUS1vFzZHhTCvcVllZu6cOq4WIY3t----"
 
 
-------MultipartBoundary--184PzcNtKvkawnRUX64kMqlr4imkCZ8RI98gEp0ZNZ----
+------MultipartBoundary--gScVFlUsBUuOdrUS1vFzZHhTCvcVllZu6cOq4WIY3t----
 Content-Type: text/html
-Content-ID: <frame-BA0AD48EFE3B3BA155932F56636F94E4@mhtml.blink>
+Content-ID: <frame-B02A69747DD3CB8CB8823F7ED52646AC@mhtml.blink>
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://getbootstrap.com/docs/5.3/content/tables/
 
-<!DOCTYPE html><html lang=3D"en" data-bs-theme=3D"dark"><head><meta http-eq=
-uiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<!DOCTYPE html><html lang=3D"en" data-bs-theme=3D"light"><head><meta http-e=
+quiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
    =20
 <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
 >
@@ -540,9 +540,9 @@ iv>
             <button class=3D"btn btn-link nav-link py-2 px-0 px-lg-2 dropdo=
 wn-toggle d-flex align-items-center" id=3D"bd-theme" type=3D"button" aria-e=
 xpanded=3D"false" data-bs-toggle=3D"dropdown" data-bs-display=3D"static" ar=
-ia-label=3D"Toggle theme (dark)">
-              <svg class=3D"bi my-1 theme-icon-active"><use href=3D"#moon-s=
-tars-fill"></use></svg>
+ia-label=3D"Toggle theme (light)">
+              <svg class=3D"bi my-1 theme-icon-active"><use href=3D"#sun-fi=
+ll"></use></svg>
               <span class=3D"d-lg-none ms-2" id=3D"bd-theme-text">Toggle th=
 eme</span>
             </button>
@@ -550,7 +550,7 @@ eme</span>
 =3D"bd-theme-text">
               <li>
                 <button type=3D"button" class=3D"dropdown-item d-flex align=
--items-center" data-bs-theme-value=3D"light" aria-pressed=3D"false">
+-items-center active" data-bs-theme-value=3D"light" aria-pressed=3D"true">
                   <svg class=3D"bi me-2 opacity-50"><use href=3D"#sun-fill"=
 ></use></svg>
                   Light
@@ -560,7 +560,7 @@ use></svg>
               </li>
               <li>
                 <button type=3D"button" class=3D"dropdown-item d-flex align=
--items-center active" data-bs-theme-value=3D"dark" aria-pressed=3D"true">
+-items-center" data-bs-theme-value=3D"dark" aria-pressed=3D"false">
                   <svg class=3D"bi me-2 opacity-50"><use href=3D"#moon-star=
 s-fill"></use></svg>
                   Dark
@@ -983,19 +983,20 @@ of tables (given their prevalent use in JavaScript plugins) with Bootstrap.=
         <div id=3D"carbonads"><span>
 
 <span class=3D"carbon-wrap">
-	<a href=3D"https://srv.carbonads.net/ads/click/x/GTND427LCVSDL53WC6ALYKQUC=
-V7D42QUCWYIVZ3JCA7D6KJYCTAIC23KC6BIE5QECWYIP2QEF67DT2QEC6YICK7LHEYI5KJLCYAI=
-C2JECTNCYBZ52K" class=3D"carbon-img" target=3D"_blank" rel=3D"noopener spon=
+	<a href=3D"https://srv.carbonads.net/ads/click/x/GTND427LCVSI623LF6YLYKQUC=
+V7D6KQMCYYITZ3JCA7D6KJLCE7DEK3KC6BIE5QECWYIP2QEF67DT2QEC6YDPKQMHEYI5KJLCA7I=
+CKJECTNCYBZ52K" class=3D"carbon-img" target=3D"_blank" rel=3D"noopener spon=
 sored">
 		<img src=3D"https://srv.carbonads.net/static/30242/ede7fb35aca2bc66eccbb7=
 6d5096bd48d8104a8d" alt=3D"ads via Carbon" border=3D"0" height=3D"100" widt=
 h=3D"130" data-no-statview=3D"no" style=3D"max-width: 130px;">
 	</a>
-	<a href=3D"https://srv.carbonads.net/ads/click/x/GTND427LCVSDL53WC6ALYKQUC=
-V7D42QUCWYIVZ3JCA7D6KJYCTAIC23KC6BIE5QECWYIP2QEF67DT2QEC6YICK7LHEYI5KJLCYAI=
-C2JECTNCYBZ52K" class=3D"carbon-text" target=3D"_blank" rel=3D"noopener spo=
+	<a href=3D"https://srv.carbonads.net/ads/click/x/GTND427LCVSI623LF6YLYKQUC=
+V7D6KQMCYYITZ3JCA7D6KJLCE7DEK3KC6BIE5QECWYIP2QEF67DT2QEC6YDPKQMHEYI5KJLCA7I=
+CKJECTNCYBZ52K" class=3D"carbon-text" target=3D"_blank" rel=3D"noopener spo=
 nsored">
-		Redesign the way you jam with FigJam AI.
+		Explore design possibilities with Figma. Build prototypes, and easily tra=
+nslate your work into code.
 	</a>
 </span>
 <a href=3D"http://carbonads.net/?utm_source=3Dgetbootstrapcom&amp;utm_mediu=
@@ -4149,7 +4150,7 @@ abindex=3D"-1"></div>
  =20
 
 </body></html>
-------MultipartBoundary--184PzcNtKvkawnRUX64kMqlr4imkCZ8RI98gEp0ZNZ----
+------MultipartBoundary--gScVFlUsBUuOdrUS1vFzZHhTCvcVllZu6cOq4WIY3t----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://cdn.jsdelivr.net/npm/@docsearch/css@3
@@ -4510,7 +4511,7 @@ dden; padding: 0px; user-select: none; white-space: nowrap; }
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
-------MultipartBoundary--184PzcNtKvkawnRUX64kMqlr4imkCZ8RI98gEp0ZNZ----
+------MultipartBoundary--gScVFlUsBUuOdrUS1vFzZHhTCvcVllZu6cOq4WIY3t----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css
@@ -10431,7 +10432,7 @@ tant; }
   .d-print-inline-flex { display: inline-flex !important; }
   .d-print-none { display: none !important; }
 }
-------MultipartBoundary--184PzcNtKvkawnRUX64kMqlr4imkCZ8RI98gEp0ZNZ----
+------MultipartBoundary--gScVFlUsBUuOdrUS1vFzZHhTCvcVllZu6cOq4WIY3t----
 Content-Type: text/css
 Content-Transfer-Encoding: quoted-printable
 Content-Location: https://getbootstrap.com/docs/5.3/assets/css/docs.css
@@ -12051,7 +12052,7 @@ e-in-out, opacity 0.15s ease-in-out; }
 
 .anchor-link:focus, .anchor-link:hover, :hover > .anchor-link, :target > .a=
 nchor-link { color: rgb(13, 110, 253); text-decoration: none; opacity: 1; }
-------MultipartBoundary--184PzcNtKvkawnRUX64kMqlr4imkCZ8RI98gEp0ZNZ----
+------MultipartBoundary--gScVFlUsBUuOdrUS1vFzZHhTCvcVllZu6cOq4WIY3t----
 Content-Type: image/jpeg
 Content-Transfer-Encoding: base64
 Content-Location: https://srv.carbonads.net/static/30242/ede7fb35aca2bc66eccbb76d5096bd48d8104a8d
@@ -12200,4 +12201,4 @@ ereLO6kefcWfl5T1b94TpPb0+TKSVCtq49oiaSZxMxfkBHlwF24di5LuTs7fNdxHwv3ZueHaYvTb
 kAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAA
 EQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABEAARAAEQABF//Z
 
-------MultipartBoundary--184PzcNtKvkawnRUX64kMqlr4imkCZ8RI98gEp0ZNZ------
+------MultipartBoundary--gScVFlUsBUuOdrUS1vFzZHhTCvcVllZu6cOq4WIY3t------
